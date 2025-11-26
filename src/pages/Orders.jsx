@@ -6,7 +6,7 @@ export default function Orders() {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/orders", {
+      const res = await axios.get("https://ecommercebe-b90j.onrender.com/api/orders", {
         withCredentials: true,
       });
       setOrders(res.data);

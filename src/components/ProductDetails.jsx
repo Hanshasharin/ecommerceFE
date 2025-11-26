@@ -9,12 +9,12 @@ export default function ProductDetails() {
   const [form, setForm] = useState({ rating: 5, review: "" });
 
   const getProduct = async () => {
-    const res = await axios.get(`http://localhost:3000/api/product/detail/${id}`);
+    const res = await axios.get(`https://ecommercebe-b90j.onrender.com/api/product/detail/${id}`);
     setProduct(res.data);
   };
 
   const getReviews = async () => {
-    const res = await axios.get(`http://localhost:3000/api/review/list/${id}`);
+    const res = await axios.get(`https://ecommercebe-b90j.onrender.com/api/review/list/${id}`);
     setReviews(res.data);
   };
 
@@ -26,7 +26,7 @@ export default function ProductDetails() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios.post(
-      "http://localhost:3000/api/review/add",
+      "https://ecommercebe-b90j.onrender.com/api/review/add",
       { productId: id, rating: form.rating, review: form.review },
       { withCredentials: true }
     );
@@ -37,7 +37,7 @@ export default function ProductDetails() {
   const handleAddToCart = async () => {
     try {
       await axios.post(
-        "http://localhost:3000/api/cart/add",
+        "https://ecommercebe-b90j.onrender.com/api/cart/add",
         { productId: id },
         { withCredentials: true }
       );

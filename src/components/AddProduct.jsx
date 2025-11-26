@@ -18,7 +18,7 @@ export default function AddProduct() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:3000/api/product/create", form);
+    await axios.post("https://ecommercebe-b90j.onrender.com/api/product/create", form);
     navigate("/product");
   };
 

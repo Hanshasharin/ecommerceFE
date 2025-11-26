@@ -13,7 +13,7 @@ export default function Login() {
 
     try {
       await axios.post(
-        "http://localhost:3000/api/login",
+        "https://ecommercebe-b90j.onrender.com/api/login",
         { email, password },
         { withCredentials: true }
       );
@@ -63,7 +63,7 @@ export default function Login() {
 
         {/* Google Login */}
         <a
-          href="http://localhost:3000/api/google"
+          href="https://ecommercebe-b90j.onrender.com/api/google"
           className="w-full border py-2 mt-4 rounded-lg flex justify-center items-center gap-2 hover:bg-gray-100"
         >
           <img

@@ -10,7 +10,7 @@ export default function Checkout() {
 
   const fetchCart = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/cart", {
+      const res = await axios.get("https://ecommercebe-b90j.onrender.com/api/cart", {
         withCredentials: true,
       });
       setCart(res.data);
@@ -31,7 +31,7 @@ export default function Checkout() {
   const handlePlaceOrder = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/orders/checkout",
+        "https://ecommercebe-b90j.onrender.com/api/orders/checkout",
         { paymentMethod, address },
         { withCredentials: true }
       );

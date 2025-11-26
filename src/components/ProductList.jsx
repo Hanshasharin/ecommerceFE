@@ -6,7 +6,7 @@ export default function ProductList() {
   const [products, setProducts] = useState([]);
 
   const getProducts = async () => {
-    const res = await axios.get("http://localhost:3000/api/product/list");
+    const res = await axios.get("https://ecommercebe-b90j.onrender.com/api/product/list");
     setProducts(res.data);
   };
 
@@ -15,7 +15,7 @@ export default function ProductList() {
   }, []);
 
   const deleteProduct = async (id) => {
-    await axios.delete(`http://localhost:3000/api/product/delete?id=${id}`);
+    await axios.delete(`https://ecommercebe-b90j.onrender.com/api/product/delete?id=${id}`);
     getProducts(); // refresh after delete
   };
 

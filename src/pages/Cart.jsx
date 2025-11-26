@@ -8,7 +8,7 @@ export default function Cart() {
 
 
   const fetchCart = async () => {
-    const res = await axios.get("http://localhost:3000/api/cart", {
+    const res = await axios.get("https://ecommercebe-b90j.onrender.com/api/cart", {
       withCredentials: true,
     });
     setCart(res.data);
@@ -19,17 +19,17 @@ export default function Cart() {
   }, []);
 
   const increase = async (productId) => {
-    await axios.put("http://localhost:3000/api/cart/increase", { productId }, { withCredentials: true });
+    await axios.put("https://ecommercebe-b90j.onrender.com/api/cart/increase", { productId }, { withCredentials: true });
     fetchCart(); 
   };
 
   const decrease = async (productId) => {
-    await axios.put("http://localhost:3000/api/cart/decrease", { productId }, { withCredentials: true });
+    await axios.put("https://ecommercebe-b90j.onrender.com/api/cart/decrease", { productId }, { withCredentials: true });
     fetchCart();
   };
 
   const removeItem = async (productId) => {
-    await axios.delete(`http://localhost:3000/api/cart/remove/${productId}`, { withCredentials: true });
+    await axios.delete(`https://ecommercebe-b90j.onrender.com/api/cart/remove/${productId}`, { withCredentials: true });
     fetchCart();
   };
 
